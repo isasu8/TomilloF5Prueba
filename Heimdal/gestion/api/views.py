@@ -17,6 +17,9 @@ class RecursoViewSet(viewsets.ModelViewSet):
 class ProyectoViewSet(viewsets.ModelViewSet):
     queryset = Proyecto.objects.all()
     serializer_class = ProyectoSerializer
+
+    def perform_create(self, serializer): 
+        serializer.save(id=1) 
     
 class TareaViewSet(viewsets.ModelViewSet):
     queryset = Tarea.objects.all()
