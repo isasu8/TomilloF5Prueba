@@ -10,6 +10,9 @@ from gestion.api.serializers import RecursoSerializer, ProyectoSerializer, Tarea
 class RecursoViewSet(viewsets.ModelViewSet):
     queryset = Recurso.objects.all()
     serializer_class = RecursoSerializer
+    
+    def perform_create(self, serializer): 
+        serializer.save(id=1) 
 
 class ProyectoViewSet(viewsets.ModelViewSet):
     queryset = Proyecto.objects.all()
